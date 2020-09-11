@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "//aliramazanmert.github.io/react-weather-app/static/css/main.4151f840.chunk.css",
+    "main.js": "//aliramazanmert.github.io/react-weather-app/static/js/main.2ef9af8f.chunk.js",
+    "main.js.map": "//aliramazanmert.github.io/react-weather-app/static/js/main.2ef9af8f.chunk.js.map",
+    "runtime-main.js": "//aliramazanmert.github.io/react-weather-app/static/js/runtime-main.39a58234.js",
+    "runtime-main.js.map": "//aliramazanmert.github.io/react-weather-app/static/js/runtime-main.39a58234.js.map",
+    "static/js/2.a504ab98.chunk.js": "//aliramazanmert.github.io/react-weather-app/static/js/2.a504ab98.chunk.js",
+    "static/js/2.a504ab98.chunk.js.map": "//aliramazanmert.github.io/react-weather-app/static/js/2.a504ab98.chunk.js.map",
+    "index.html": "//aliramazanmert.github.io/react-weather-app/index.html",
+    "precache-manifest.1a364672a6d4b74d2f3632c9e479b6e7.js": "//aliramazanmert.github.io/react-weather-app/precache-manifest.1a364672a6d4b74d2f3632c9e479b6e7.js",
+    "service-worker.js": "//aliramazanmert.github.io/react-weather-app/service-worker.js",
+    "static/css/main.4151f840.chunk.css.map": "//aliramazanmert.github.io/react-weather-app/static/css/main.4151f840.chunk.css.map",
+    "static/js/2.a504ab98.chunk.js.LICENSE.txt": "//aliramazanmert.github.io/react-weather-app/static/js/2.a504ab98.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.39a58234.js",
+    "static/js/2.a504ab98.chunk.js",
+    "static/css/main.4151f840.chunk.css",
+    "static/js/main.2ef9af8f.chunk.js"
+  ]
+}
