@@ -3,8 +3,8 @@ import moment from "moment";
 import { useForecasts } from "./hooks";
 import * as S from "./styles";
 
-const ForecastList = ({ coords }) => {
-  const forecast = useForecasts(coords);
+const ForecastList = ({ coords, isGeolocationError }) => {
+  const forecast = useForecasts(coords, isGeolocationError);
 
   const forecastItem = (item) => (
     <S.ForecastItem key={item.date_epoch}>

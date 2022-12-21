@@ -3,8 +3,8 @@ import { useWeather } from "./hooks";
 
 import * as S from "./styles";
 
-const CurrentWeather = ({ coords }) => {
-  const weather = useWeather(coords);
+const CurrentWeather = ({ coords, isGeolocationError }) => {
+  const weather = useWeather(coords, isGeolocationError);
 
   return (
     <div>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useForceGeolocation } from "../../hooks/useForceGeolocation";
 import { useWeather } from "../../features/current-weather/hooks";
 import { useForecasts } from "../../features/forecast-list/hooks";
 import ForecastList from "../../features/forecast-list";
@@ -8,26 +9,24 @@ import Renderer from "../../components/renderer";
 import * as S from "./styles";
 
 const Home = () => {
-  const [coords, setCoords] = useState();
+  const {
+    coords,
+    isError: isGeolocationError,
+    isLoading: isGeolocationLoading,
+  } = useForceGeolocation();
   const forecast = useForecasts(coords);
   const weather = useWeather(coords);
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setCoords(position.coords);
-    });
-  }, []);
 
   return (
     <S.Background>
       <S.Card>
         <Renderer
-          isLoading={forecast.isLoading || weather.isLoading}
-          isError={forecast.isError || weather.isError || true}
+          isLoading={forecast.isLoading || weather.isLoading || isGeolocationLoading}
+          isError={forecast.isError || weather.isError || isGeolocationError}
           component={
             <>
-              <CurrentWeather coords={coords} />
-              <ForecastList coords={coords} />
+              <CurrentWeather coords={coords} isGeolocationError={isGeolocationError} />
+              <ForecastList coords={coords} isGeolocationError={isGeolocationError} />
             </>
           }
         />

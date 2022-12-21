@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Result } from "antd";
 import Spin from "../spin";
 
-const Renderer = ({ isError, error, errorDescription, isLoading, component }) => {
+const Renderer = ({ isError, error, isLoading, component }) => {
   if (isError) {
-    return <Result status="error" title={error} subTitle={errorDescription} />;
+    return <Result status="error" title={error} />;
   }
 
   if (isLoading) {
@@ -18,7 +18,6 @@ const Renderer = ({ isError, error, errorDescription, isLoading, component }) =>
 Renderer.propTypes = {
   isError: PropTypes.bool,
   error: PropTypes.string,
-  errorDescription: PropTypes.string,
   isLoading: PropTypes.bool,
   component: PropTypes.node.isRequired,
 };
@@ -26,7 +25,6 @@ Renderer.propTypes = {
 Renderer.defaultProps = {
   isError: false,
   error: "Something went wrong",
-  errorDescription: null,
   isLoading: false,
 };
 

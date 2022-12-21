@@ -1,0 +1,4 @@
+export default {
+  GEOLOCATION_DB_API_KEY: process.env.REACT_APP_GEOLOCATION_DB_API_KEY,
+  WEATHER_API_KEY: process.env.REACT_APP_WEATHER_API_KEY,
+};
