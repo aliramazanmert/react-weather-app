@@ -3,7 +3,7 @@ import { useWeather } from "../../features/current-weather/hooks";
 import { useForecasts } from "../../features/forecast-list/hooks";
 import ForecastList from "../../features/forecast-list";
 import CurrentWeather from "../../features/current-weather";
-import Spin from "../../components/spin";
+import Renderer from "../../components/renderer";
 
 import * as S from "./styles";
 
@@ -21,14 +21,16 @@ const Home = () => {
   return (
     <S.Background>
       <S.Card>
-        {forecast.isLoading || weather.isLoading ? (
-          <Spin centered />
-        ) : (
-          <>
-            <CurrentWeather coords={coords} />
-            <ForecastList coords={coords} />
-          </>
-        )}
+        <Renderer
+          isLoading={forecast.isLoading || weather.isLoading}
+          isError={forecast.isError || weather.isError || true}
+          component={
+            <>
+              <CurrentWeather coords={coords} />
+              <ForecastList coords={coords} />
+            </>
+          }
+        />
       </S.Card>
     </S.Background>
   );
