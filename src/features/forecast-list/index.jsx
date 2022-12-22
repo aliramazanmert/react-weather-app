@@ -3,6 +3,8 @@ import moment from "moment";
 import { useForecasts } from "./hooks";
 import * as S from "./styles";
 
+const NUMBER_OF_HOURLY_FORECAST = 6;
+
 const ForecastList = ({ coords, isGeolocationError }) => {
   const forecast = useForecasts(coords, isGeolocationError);
 
@@ -13,7 +15,7 @@ const ForecastList = ({ coords, isGeolocationError }) => {
         <S.Icon src={item.day.condition.icon} alt="forecast-weather" />
       </div>
       <div>{Math.round(item.day.maxtemp_c)}</div>
-      <S.MinTemp>{Math.round(item.day?.mintemp_c)}</S.MinTemp>
+      <S.MinTemp>{Math.round(item.day.mintemp_c)}</S.MinTemp>
     </S.ForecastItem>
   );
 
@@ -30,12 +32,12 @@ const ForecastList = ({ coords, isGeolocationError }) => {
   return (
     <S.Container>
       <S.HourlyForecastContainer>
-        {forecast.data?.forecast?.forecastday?.[0]?.hour
-          ?.slice(0, 6)
+        {forecast.data.forecast.forecastday?.[0]?.hour
+          ?.slice(0, NUMBER_OF_HOURLY_FORECAST)
           ?.map(renderHourlyForecastItem)}
       </S.HourlyForecastContainer>
       <S.DailyForecastContainer>
-        {forecast.data?.forecast?.forecastday?.map(renderDailyForecastItem)}
+        {forecast.data.forecast.forecastday.map(renderDailyForecastItem)}
       </S.DailyForecastContainer>
     </S.Container>
   );
