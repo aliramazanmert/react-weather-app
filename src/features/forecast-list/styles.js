@@ -4,6 +4,21 @@ export const MinTemp = styled.div`
   color: #d0d0d0;
 `;
 
+export const HourlyForecastContainer = styled.div`
+  width: 100%;
+  display: flex;
+  margin-top: 48px;
+  gap: 15px;
+`;
+
+export const HourlyForecastItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  line-height: 23px;
+`;
+
 export const ForecastItem = styled.div`
   display: flex;
   align-items: center;
@@ -25,9 +40,21 @@ export const ForecastItem = styled.div`
   }
 `;
 
+export const HourlyIcon = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
 export const Icon = styled.img`
   width: 55px;
   height: 55px;
+`;
+
+export const DailyForecastContainer = styled.div`
+  width: 100%;
+  font-size: 20px;
+  line-height: 23px;
+  margin-top: 48px;
 `;
 
 export const Container = styled.div`
@@ -36,6 +63,4 @@ export const Container = styled.div`
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
 `;
